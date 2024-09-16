@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContactDetailsView: View {
     let contact: Person
+   
     var body: some View {
         Image(systemName: "person")
             .resizable()

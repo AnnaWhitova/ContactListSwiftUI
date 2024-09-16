@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailsInfoView: View {
     let contact: Person
+  
     var body: some View {
         HStack {
             Image(systemName: "phone")
