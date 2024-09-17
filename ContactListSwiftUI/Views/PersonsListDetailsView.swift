@@ -12,11 +12,15 @@ struct PersonsListDetailsView: View {
     let title = "Contact List"
     
     var body: some View {
-        List(contacts) { contact in
-            Section(header: Text("\(contact.fullName)").font(.headline)) {
-                DetailsInfoView(contact: contact, name: "phone")
-                DetailsInfoView(contact: contact, name: "tray")
+        NavigationStack {
+            List(contacts) { contact in
+                Section(header: Text("\(contact.fullName)").font(.headline)) {
+                    DetailsInfoView(contact: contact, name: "phone")
+                    DetailsInfoView(contact: contact, name: "tray")
+                }
             }
+            .listStyle(.plain)
+            .navigationTitle(title)
         }
     }
 }
