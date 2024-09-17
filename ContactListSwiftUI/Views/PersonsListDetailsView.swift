@@ -14,7 +14,8 @@ struct PersonsListDetailsView: View {
     var body: some View {
         List(contacts) { contact in
             Section(header: Text("\(contact.fullName)").font(.headline)) {
-                DetailsInfoView(contact: contact)
+                DetailsInfoView(contact: contact, name: "phone")
+                DetailsInfoView(contact: contact, name: "tray")
             }
         }
     }

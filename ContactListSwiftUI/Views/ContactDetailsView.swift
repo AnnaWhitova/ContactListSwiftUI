@@ -11,21 +11,28 @@ struct ContactDetailsView: View {
     let contact: Person
    
     var body: some View {
-        Image(systemName: "person")
-            .resizable()
-            .scaledToFit()
-            .frame(width: 120, height: 120)
-            .foregroundStyle(.black)
-            .padding(.top)
-        HStack {
-            VStack(alignment: .leading) {
-                DetailsInfoView(contact: contact)
+        List {
+            HStack {
+                Spacer()
+                Image(systemName: "person.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 120, height: 120)
+                    .foregroundStyle(.black)
+                    .padding(.top)
                 Spacer()
             }
-            Spacer()
+            HStack {
+                VStack(alignment: .leading) {
+                    DetailsInfoView(contact: contact, name: "phone")
+                    DetailsInfoView(contact: contact, name: "tray")
+                    Spacer()
+                }
+                Spacer()
+            }
+            .padding()
+            .navigationTitle("\(contact.fullName)")
         }
-        .padding()
-        .navigationTitle("\(contact.fullName)")
     }
 }
 
