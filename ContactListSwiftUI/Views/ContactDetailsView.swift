@@ -22,17 +22,10 @@ struct ContactDetailsView: View {
                     .padding(.top)
                 Spacer()
             }
-            HStack {
-                VStack(alignment: .leading) {
-                    DetailsInfoView(contact: contact, name: "phone")
-                    DetailsInfoView(contact: contact, name: "tray")
-                    Spacer()
-                }
-                Spacer()
-            }
-            .padding()
-            .navigationTitle("\(contact.fullName)")
+            DetailsInfoView(contact: contact, name: "phone")
+            DetailsInfoView(contact: contact, name: "tray")
         }
+        .navigationTitle("\(contact.fullName)")
     }
 }
 
